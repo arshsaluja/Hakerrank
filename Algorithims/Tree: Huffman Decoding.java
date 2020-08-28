@@ -46,11 +46,20 @@ class Decoding {
     
 */ 
 
-    void decode(String s, Node root) {
-
-
+    void decode(String S, Node root) {
+          StringBuilder sb=new StringBuilder();
+          Node c=root;
+          for(int i=0;i<S.length();i++)
+          {
+              c=S.charAt(i)=='1'?c.right :c.left;
+              if(c.right==null &&c.left==null)
+              {
+                  sb.append(c.data);
+                  c=root;
+              }
+          }
+System.out.print(sb);
     }
-
 
 }
 
